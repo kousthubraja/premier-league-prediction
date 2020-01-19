@@ -2,8 +2,10 @@ import csv
 from rds_creds import *
 from datetime import datetime
 
+print("Connecting to AWS RDS.This may timeout if service is down or port 3306 is blocked.")  
 cursor = get_rds_cursor()
 rds = get_rds_db()
+print("RDS connection successfull.")
 
 def clean_db():
     sql_clean = "delete from PremierLeague"

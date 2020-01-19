@@ -1,9 +1,10 @@
 from datetime import datetime
-
 from rds_creds import *
 
+print("Connecting to AWS RDS.This may timeout if service is down or port 3306 is blocked.")  
 cursor = get_rds_cursor()
 rds = get_rds_db()
+print("RDS connection successfull.")
 
 #For this scenario, model is just a average of team's home and away goals, so easier
 # to use SQL aggregate function to build it, and then insert to another table
